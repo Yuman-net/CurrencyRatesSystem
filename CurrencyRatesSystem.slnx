@@ -17,4 +17,7 @@
   </Folder>
   <Folder Name="/src/Workers/" />
   <Folder Name="/tests/" />
+  <Folder Name="/tests/UserSerivceTests/">
+    <Project Path="tests/UserSerivceTests/UserSerivceTests.csproj" />
+  </Folder>
 </Solution>
