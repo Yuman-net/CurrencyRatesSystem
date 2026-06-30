@@ -1,0 +1,9 @@
+global using Moq;
+global using UserService.Application.Abstractions.Repositories;
+global using UserService.Application.Abstractions.Services;
+global using UserService.Application.Commands.LogInUser;
+global using UserService.Application.Commands.LogoutUser;
+global using UserSerivce.Application.Commands.RegisterUser;
+global using UserService.Application.Exseptions;
+global using UserService.Domain;
+global using Xunit;

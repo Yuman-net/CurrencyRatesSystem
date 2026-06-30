@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/src/">
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/FinanceService/">
+    <Project Path="src/Services/FinanceService/FinanceService.Application/FinanceService.Application.csproj" />
+    <Project Path="src/Services/FinanceService/FinanceService.Domain/FinanceService.Domain.csproj" />
+    <Project Path="src/Services/FinanceService/FinanceService.Infrastructure/FinanceService.Infrastructure.csproj" />
+    <Project Path="src/Services/FinanceService/FinanseService.Api/FinanseService.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/UserService/">
+    <Project Path="src/Services/UserService/UserSerivce.Application/UserService.Application.csproj" />
+    <Project Path="src/Services/UserService/UserService.Api/UserService.Api.csproj" />
+    <Project Path="src/Services/UserService/UserService.Domain/UserService.Domain.csproj" />
+    <Project Path="src/Services/UserService/UserService.Infrastructure/UserService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Workers/" />
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/UserSerivceTests/">
+    <Project Path="tests/UserSerivceTests/UserSerivceTests.csproj" />
+  </Folder>
+</Solution>
