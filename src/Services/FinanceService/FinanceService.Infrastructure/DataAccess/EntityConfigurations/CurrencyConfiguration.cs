@@ -15,6 +15,9 @@ namespace FinanceService.Infrastructure.DataAccess.Configurations
 
             builder.Property(x => x.Rate)
                 .IsRequired();
+
+            builder.HasIndex(x => x.Name)
+                .IsUnique();
         }
     }
 }

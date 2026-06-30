@@ -15,7 +15,9 @@
     <Project Path="src/Services/UserService/UserService.Domain/UserService.Domain.csproj" />
     <Project Path="src/Services/UserService/UserService.Infrastructure/UserService.Infrastructure.csproj" />
   </Folder>
-  <Folder Name="/src/Workers/" />
+  <Folder Name="/src/Workers/">
+    <Project Path="CurrencyRateWorker/CurrencyRateWorker.csproj" Id="242c49a3-bcba-40b3-9138-b9761c36b435" />
+  </Folder>
   <Folder Name="/tests/" />
   <Folder Name="/tests/UserSerivceTests/">
     <Project Path="tests/UserSerivceTests/UserSerivceTests.csproj" />

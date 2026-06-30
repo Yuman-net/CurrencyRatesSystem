@@ -1,7 +1,9 @@
 ﻿using FinanceService.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace FinanseService.Api.Extensions
+namespace FinanceService.Infrastructure.Extensions
 {
     public static class DataContextExtension
     {
