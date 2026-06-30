@@ -16,6 +16,7 @@ namespace UserService.Api.Controllers
     [Route("api/[controller]")]
     public sealed class UserController : ControllerBase
     {
+        // Отличия от IMediatr т.п
         private readonly ISender _sender;
 
         public UserController(ISender sender)
