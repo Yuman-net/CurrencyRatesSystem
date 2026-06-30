@@ -1,8 +1,10 @@
 ﻿using FinanceService.Application.Abstractions.Repositories;
 using FinanceService.Application.Queries;
 using FinanceService.Infrastructure.Repositories;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace FinanseService.Api.Extensions
+namespace FinanceService.Infrastructure.Extensions
 {
     public static class ServicesExtensions
     {
