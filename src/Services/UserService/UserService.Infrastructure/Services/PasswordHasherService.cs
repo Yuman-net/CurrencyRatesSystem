@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using UserService.Application.Abstractions.Services;
 
-namespace UserService.Infrastructure
+namespace UserService.Infrastructure.Services
 {
     public sealed class PasswordHasherService : IPasswordHasherService
     {

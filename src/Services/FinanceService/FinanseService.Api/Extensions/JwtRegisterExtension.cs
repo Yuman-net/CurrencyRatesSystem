@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using FinanceService.Infrastructure.Authentification;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using UserService.Api.Authentication;
-using UserService.Infrastructure.Authentification;
 
-namespace UserService.Api.Extensions
+namespace FinanseService.Api.Extensions
 {
     public static class JwtRegisterExtension
     {
@@ -18,14 +17,10 @@ namespace UserService.Api.Extensions
                 throw new InvalidOperationException("Secret key are not configured");
             }
 
-            services.AddScoped<RevokedTokenValidationEvents>();
-
             services
                 .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
-                    options.EventsType = typeof(RevokedTokenValidationEvents);
-
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = true,
