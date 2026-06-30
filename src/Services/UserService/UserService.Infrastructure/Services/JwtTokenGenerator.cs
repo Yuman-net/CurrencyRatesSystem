@@ -6,7 +6,7 @@ using System.Text;
 using UserService.Application.Abstractions.Services;
 using UserService.Infrastructure.Authentification;
 
-namespace UserService.Infrastructure
+namespace UserService.Infrastructure.Services
 {
     public sealed class JwtTokenGenerator : IJwtTokenGenerator 
     {

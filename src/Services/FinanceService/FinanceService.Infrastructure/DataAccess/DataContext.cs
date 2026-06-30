@@ -8,6 +8,8 @@ namespace FinanceService.Infrastructure.DataAccess
     {
         public DbSet<Currency> Currencies { get; set; }
 
+        public DbSet<UserFavoriteCurrency> UserFavoriteCurrencies { get; set; }
+
         public DataContext(DbContextOptions<DataContext> options)
             : base (options)
         {
