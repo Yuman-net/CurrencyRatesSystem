@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using UserService.Application.Abstractions.Repositories;
 using UserService.Application.Abstractions.Services;
-using UserService.Application.Exseptions;
+using UserService.Application.Exceptions;
 using UserService.Domain;
 
 namespace UserSerivce.Application.Commands.RegisterUser
