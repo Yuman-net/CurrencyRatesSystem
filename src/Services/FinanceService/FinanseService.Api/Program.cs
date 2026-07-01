@@ -1,3 +1,4 @@
+using FinanceService.Infrastructure.Extensions;
 using FinanseService.Api.Extensions;
 
 namespace FinanseService.Api

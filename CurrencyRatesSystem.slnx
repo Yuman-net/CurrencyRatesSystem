@@ -2,6 +2,9 @@
   <Folder Name="/src/">
     <File Path="docker-compose.yml" />
   </Folder>
+  <Folder Name="/src/DatabaseMigrator/">
+    <Project Path="src/DatabaseMigrator/DatabaseMigrator/DatabaseMigrator.csproj" Id="069022d1-7e1c-400c-b4a3-5743dafbb84b" />
+  </Folder>
   <Folder Name="/src/Services/" />
   <Folder Name="/src/Services/FinanceService/">
     <Project Path="src/Services/FinanceService/FinanceService.Application/FinanceService.Application.csproj" />
@@ -15,8 +18,8 @@
     <Project Path="src/Services/UserService/UserService.Domain/UserService.Domain.csproj" />
     <Project Path="src/Services/UserService/UserService.Infrastructure/UserService.Infrastructure.csproj" />
   </Folder>
-  <Folder Name="/src/Workers/">
-    <Project Path="CurrencyRateWorker/CurrencyRateWorker.csproj" Id="242c49a3-bcba-40b3-9138-b9761c36b435" />
+  <Folder Name="/src/Worker/">
+    <Project Path="src/Worker/CurrencyRateWorker/CurrencyRateWorker.csproj" />
   </Folder>
   <Folder Name="/tests/" />
   <Folder Name="/tests/UserSerivceTests/">
