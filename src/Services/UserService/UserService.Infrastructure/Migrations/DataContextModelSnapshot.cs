@@ -17,6 +17,7 @@ namespace UserService.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("user")
                 .HasAnnotation("ProductVersion", "8.0.28")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -37,7 +38,7 @@ namespace UserService.Infrastructure.Migrations
 
                     b.HasIndex("ExpiresAtUtc");
 
-                    b.ToTable("RevokedTokens");
+                    b.ToTable("RevokedTokens", "user");
                 });
 
             modelBuilder.Entity("UserService.Domain.User", b =>
@@ -59,7 +60,7 @@ namespace UserService.Infrastructure.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", "user");
                 });
 #pragma warning restore 612, 618
         }

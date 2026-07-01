@@ -9,13 +9,20 @@ namespace FinanceService.Infrastructure.Extensions
     {
         const string connectionString = "FinanceDBConnectionString";
 
-        public static void AddDataContext(this IServiceCollection services, IConfiguration configuration)
+        const string eFMigrationsHistory = "__EFMigrationsHistory";
+
+        const string financeSchema = "finance";
+
+        public static void AddFinanceDataContext(this IServiceCollection services, IConfiguration configuration)
         {
             var postgresConnectionString = configuration.GetConnectionString(connectionString);
 
             if (!string.IsNullOrWhiteSpace(postgresConnectionString))
             {
-                services.AddDbContext<DataContext>(options => options.UseNpgsql(postgresConnectionString));
+                services.AddDbContext<DataContext>(options =>
+                {
+                    options.UseNpgsql(postgresConnectionString, opt => opt.MigrationsHistoryTable(eFMigrationsHistory, financeSchema));
+                });
             }
         }
     }

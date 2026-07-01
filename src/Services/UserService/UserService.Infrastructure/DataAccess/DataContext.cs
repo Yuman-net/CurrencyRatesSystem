@@ -19,6 +19,8 @@ namespace UserService.Infrastructure.DataAccess
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.HasDefaultSchema("user");
+
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }

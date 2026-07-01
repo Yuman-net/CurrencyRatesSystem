@@ -12,14 +12,15 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FinanceService.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20260630144440_AddCurrencyEntityMigration")]
-    partial class AddCurrencyEntityMigration
+    [Migration("20260701175533_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("finance")
                 .HasAnnotation("ProductVersion", "8.0.28")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -40,7 +41,10 @@ namespace FinanceService.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Currencies");
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Currencies", "finance");
                 });
 
             modelBuilder.Entity("FinanceService.Domain.UserFavoriteCurrency", b =>
@@ -62,7 +66,7 @@ namespace FinanceService.Infrastructure.Migrations
                     b.HasIndex("UserId", "CurrencyId")
                         .IsUnique();
 
-                    b.ToTable("UserFavoriteCurrencies");
+                    b.ToTable("UserFavoriteCurrencies", "finance");
                 });
 
             modelBuilder.Entity("FinanceService.Domain.UserFavoriteCurrency", b =>

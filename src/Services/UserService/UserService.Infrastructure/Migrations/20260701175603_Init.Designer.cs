@@ -12,14 +12,15 @@ using UserService.Infrastructure.DataAccess;
 namespace UserService.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20260628152707_AddRevorkedTokenMigration")]
-    partial class AddRevorkedTokenMigration
+    [Migration("20260701175603_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("user")
                 .HasAnnotation("ProductVersion", "8.0.28")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -40,7 +41,7 @@ namespace UserService.Infrastructure.Migrations
 
                     b.HasIndex("ExpiresAtUtc");
 
-                    b.ToTable("RevokedTokens");
+                    b.ToTable("RevokedTokens", "user");
                 });
 
             modelBuilder.Entity("UserService.Domain.User", b =>
@@ -53,13 +54,16 @@ namespace UserService.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("password")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Users", "user");
                 });
 #pragma warning restore 612, 618
         }
