@@ -12,7 +12,7 @@ namespace FinanseService.Api
             var configuration = builder.Configuration;
 
             builder.Services.AddServices(configuration);
-            builder.Services.AddDataContext(configuration);
+            builder.Services.AddFinanceDataContext(configuration);
             builder.Services.AddJwtRegister(configuration);
             builder.Services.AddControllers();
 

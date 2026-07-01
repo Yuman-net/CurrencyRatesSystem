@@ -1,5 +1,6 @@
 using UserService.Api.Extensions;
 using UserService.Api.Middlewares;
+using UserService.Infrastructure.Extensions;
 
 namespace UserService.Api
 {
@@ -14,7 +15,7 @@ namespace UserService.Api
             var configuration = builder.Configuration;
 
             builder.Services.AddServices(configuration);
-            builder.Services.AddDataContext(configuration);
+            builder.Services.AddUserDataContext(configuration);
             builder.Services.AddJwtRegister(configuration);
             builder.Services.AddControllers();
 

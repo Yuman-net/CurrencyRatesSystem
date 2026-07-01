@@ -16,7 +16,7 @@ namespace CurrencyRateWorker
 
             builder.Services.AddServices(builder.Configuration);
 
-            builder.Services.AddDataContext(builder.Configuration);
+            builder.Services.AddFinanceDataContext(builder.Configuration);
 
             builder.Services.AddHttpClient<CbCurrencyClient>();
 

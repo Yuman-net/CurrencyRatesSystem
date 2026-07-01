@@ -13,8 +13,6 @@ namespace CurrencyRateWorker.CbClient
         private const string Nominal = nameof(Nominal);
         private const string VunitRate = nameof(VunitRate);
 
-        
-
         private static readonly CultureInfo CultureInfo = new ("ru-RU");
 
         private readonly HttpClient _httpClient;

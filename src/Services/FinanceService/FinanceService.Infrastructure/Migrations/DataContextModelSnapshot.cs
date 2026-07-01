@@ -17,6 +17,7 @@ namespace FinanceService.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("finance")
                 .HasAnnotation("ProductVersion", "8.0.28")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -37,7 +38,10 @@ namespace FinanceService.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Currencies");
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Currencies", "finance");
                 });
 
             modelBuilder.Entity("FinanceService.Domain.UserFavoriteCurrency", b =>
@@ -59,7 +63,7 @@ namespace FinanceService.Infrastructure.Migrations
                     b.HasIndex("UserId", "CurrencyId")
                         .IsUnique();
 
-                    b.ToTable("UserFavoriteCurrencies");
+                    b.ToTable("UserFavoriteCurrencies", "finance");
                 });
 
             modelBuilder.Entity("FinanceService.Domain.UserFavoriteCurrency", b =>

@@ -19,6 +19,8 @@ namespace FinanceService.Infrastructure.DataAccess
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.HasDefaultSchema("finance");
+
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
